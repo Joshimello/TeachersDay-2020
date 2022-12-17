@@ -49,7 +49,7 @@
 			{#if ['p1', 'p2'].includes(subpage)}
 			<div class="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
 				{#each Array(subpage == 'p1'?12:21) as img, index}
-				<img class="shadow-xl border border-8 border-orange-300 object-cover object-center h-full" src="../{subpage}_homeroom/{index+1}.jpg">
+				<img class="shadow-xl border border-8 border-orange-300 object-cover object-center h-full" src="/{subpage}_homeroom/{index+1}.jpg">
 				{/each}
 			</div>
 			{:else}
@@ -81,7 +81,7 @@
 			{#if ['p1', 'p2'].includes(subpage)}
 			<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
 				{#each Array(subpage == 'p1'?12:17) as img, index}
-				<img class="object-cover object-center h-full" src="../{subpage}_subject/{index+1}.jpg">
+				<img class="object-cover object-center h-full" src="/{subpage}_subject/{index+1}.jpg">
 				{/each}
 			</div>
 			{:else}
