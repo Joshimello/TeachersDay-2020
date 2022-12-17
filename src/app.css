@@ -1,0 +1,23 @@
+@font-face {
+	font-family: 'font';
+	src: url('./assets/font.ttf')
+}
+
+.font-init {
+	font-family: sans-serif;
+}
+
+* {
+	font-family: 'font';
+}
+
+*::-webkit-scrollbar {
+	display: none;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}

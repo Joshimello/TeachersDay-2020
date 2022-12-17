@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Teacher's Day</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<style>
+@import "https://fonts.googleapis.com/css?family=Ubuntu:300, 400, 500, 700";
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: yay;
+  src: url(yay.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #333;
+  position: relative;
+  background: #BC3838;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+header {
+  color: #fff;
+  padding-bottom: 1vw;
+  text-align: center;
+  font-size: 4vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+footer {
+  background: #8c2929;
+  padding: 5vh 0;
+  text-align: center;
+  position: relative;
+  color: white;
+  font-family: sans-serif;
+}
+
+.fa-chevron-circle-up { 
+  position: absolute;
+  opacity:50%; 
+  font-size: 4vw;
+  margin-top: 40vw;
+  right: 49.5vw;
+}
+
+.fa-chevron-circle-down {
+  margin-top: 5vw;
+  opacity: 50%;
+}
+
+.fa-arrow-circle-left {
+  margin: 1vw;
+  opacity: 50%;
+  transition: 0.1s;
+  font-size: 3vw;
+  color:#fff;
+}
+
+.fa-arrow-circle-left:hover { 
+  opacity:100%; 
+  cursor: pointer;
+}
+
+.wordscontainer {
+  padding-left: 12vw;
+  padding-right: 12vw;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.words {
+  font-size: 1.7em;
+  color:#fff;
+}
+
+main {
+  height: 100vh;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<body onresize="resize()">
+
+<i class="fas fa-arrow-circle-left" onclick="back()"></i>
+<header id="header">
+  <h1 style="font-family: yay;font-size: 10vw;color: #fff"><i>ENGLISH TEACHERS</i></h1>
+</header>
+
+<main id="main">
+  <div class="wordscontainer">
+    <p class="words" id="typedtext">
+    </p>
+  </div>
+</main>
+
+<footer>
+    Management: Angelynn｜Junior/Senior Head: Carol｜Priamry Head: Tony｜Website: Joshua<br>
+    Mental Support: Jerry，Katniss｜Special Help: Teacher Amy｜English Message: Angelynn｜Chinese Message: Katniss<br>
+    By: Entire School｜Helpers: S2<br>
+</footer>
+
+</body>
+<script id="rendered-js">
+function back() {
+  window.location.href = "/teachersday";
+}
+
+// set up text to print, each item in array is new line
+var aText = new Array(
+  "To all of our beloved English teachers,",
+  "today we celebrate all of your work towards helping us learn and perfect the English language. We also celebrate how we will be better English speakers and writers thanks to your relentless reminders on the right spelling for our vocabulary, the right conjunctions to be used in certain contexts, or even where we are supposed to place our commas, you catch every little detail and encourage us to improve sentence by sentence. We appreciate each of you from the bottom of our hearts, especially during these trying times, where teaching is an apparent challenge, none of you have ever ceased your passion towards educating us. Although admittedly we do not show our gratitude towards you anywhere near enough, we truly do respect and are inspired by how you are able to teach us a language that is complicated and confusing, without ever giving up on us. We wish each and every one of you only the best in health, and that you will never give up on anything the same way you have taught us to never give up on English. We hope to see all of you soon!!",
+  "",
+  "p.s. we are truly sorry if you find any grammar mistakes, if you do, we would be more than grateful if you tell us where we went wrong. xP",
+);
+var iSpeed = 20; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+</script>
+</body>
+</html>

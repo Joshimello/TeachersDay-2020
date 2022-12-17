@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Teacher's Day</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<style>
+@import "https://fonts.googleapis.com/css?family=Ubuntu:300, 400, 500, 700";
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: yay;
+  src: url(yay.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #333;
+  position: relative;
+  background: #7E2546;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+header {
+  color: #fff;
+  padding-bottom: 1vw;
+  text-align: center;
+  font-size: 4vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  letter-spacing: 0.5em;
+}
+
+footer {
+  background: #853a56;
+  padding: 5vh 0;
+  text-align: center;
+  position: relative;
+  color: white;
+  font-size: 1.5vw;
+}
+
+.fa-chevron-circle-up { 
+  position: absolute;
+  opacity:50%; 
+  font-size: 4vw;
+  margin-top: 40vw;
+  right: 49.5vw;
+}
+
+.fa-chevron-circle-down {
+  margin-top: 5vw;
+  opacity: 50%;
+}
+
+.fa-arrow-circle-left {
+  margin: 1vw;
+  opacity: 50%;
+  transition: 0.1s;
+  font-size: 3vw;
+  color:#fff;
+}
+
+.fa-arrow-circle-left:hover { 
+  opacity:100%; 
+  cursor: pointer;
+}
+
+.wordscontainer {
+  padding-left: 12vw;
+  padding-right: 12vw;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.wordsstart {
+  font-size: 1.7em;
+  color:#fff;
+  letter-spacing: 0.19em;
+}
+
+.words {
+  font-size: 2.4vw;
+  color:#fff;
+}
+
+.wordssmall {
+  font-size: 1.2em;
+  color:#fff;
+}
+
+main {
+  height: 80vw;
+}
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<body onresize="resize()">
+
+<i class="fas fa-arrow-circle-left" onclick="back()"></i>
+<header id="header">
+  <h1 style="font-family: yay;font-size: 12vw;color: #fff">全體老師</h1>
+</header>
+
+<main id="main">
+  <div class="wordscontainer">
+    <p class="words" id="typedtext">>
+
+    </p>
+  </div>
+</main>
+
+<footer>
+    規劃人以及網站設計: 黃謙愛｜國高中部負責人: 陳可若｜小學部負責人: 池宥樑｜網站建立: 連正文<br>
+    心靈支援: 鄭佳濰，陳儒纓｜小學部協助: 許婉葳老師｜英文謝師文章: 黃謙愛｜中文謝師文章: 陳儒纓<br>
+    配合: 全校｜默默的支持: 高二班<br>
+</footer>
+
+</body>
+<script id="rendered-js">
+function back() {
+  window.location.href = "/teachersday";
+}
+
+// set up text to print, each item in array is new line
+var aText = new Array(
+"各位台校的老師、主任、訓育組長們，",
+"高二班全體學生由衷感謝在校師長的教導。",
+"你們猶如月亮，是黑夜裡的溫暖。",
+"當我們畏懼黑暗不敢向前，",
+"您默默成為我們心中的一份力量。",
+"迷茫黑夜失去方向時，更為我們指引明路。",
+"做錯事的我們化身成一隻小老鼠，在冰冷的夜逃竄，",
+"你們也毫不吝嗇的細心引導，直到天亮。",
+"我們知道即使今天是新月，你們也從不缺席。",
+"是你們在我們每個陌生的夜晚，偷偷陪伴；",
+"是你們讓可怕的夜晚，藏著溫存，使我們不再被它吞噬；",
+"是你們悄悄的讓太陽快點出來，曬乾了暴風雨的霉氣；",
+" ",
+"是你們的到來，讓我們感受到愛、被愛；",
+"更是你們帶給了我們溫暖和希望。",
+" ",
+"網路課程因你們的出現，學習不受疫情終止；",
+"謝謝你們無私的愛，與關懷；",
+" ",
+"教師節快樂，老師您真的辛苦了!!",
+);
+var iSpeed = 50; // time delay of print out
+var iIndex = 0; // start printing array at this posision
+var iArrLength = aText[0].length; // the length of the text array
+var iScrollAt = 20; // start scrolling up at this many lines
+ 
+var iTextPos = 0; // initialise text position
+var sContents = ''; // initialise contents variable
+var iRow; // initialise current row
+ 
+function typewriter()
+{
+ sContents =  ' ';
+ iRow = Math.max(0, iIndex-iScrollAt);
+ var destination = document.getElementById("typedtext");
+ 
+ while ( iRow < iIndex ) {
+  sContents += aText[iRow++] + '<br />';
+ }
+ destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+ if ( iTextPos++ == iArrLength ) {
+  iTextPos = 0;
+  iIndex++;
+  if ( iIndex != aText.length ) {
+   iArrLength = aText[iIndex].length;
+   setTimeout("typewriter()", 500);
+  }
+ } else {
+  setTimeout("typewriter()", iSpeed);
+ }
+}
+
+
+typewriter();
+</script>
+</body>
+</html>

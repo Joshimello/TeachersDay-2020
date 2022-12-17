@@ -1,0 +1,6 @@
+export default [
+    'To all of our beloved English teachers,',
+    'today we celebrate all of your work towards helping us learn and perfect the English language. We also celebrate how we will be better English speakers and writers thanks to your relentless reminders on the right spelling for our vocabulary, the right conjunctions to be used in certain contexts, or even where we are supposed to place our commas, you catch every little detail and encourage us to improve sentence by sentence. We appreciate each of you from the bottom of our hearts, especially during these trying times, where teaching is an apparent challenge, none of you have ever ceased your passion towards educating us. Although admittedly we do not show our gratitude towards you anywhere near enough, we truly do respect and are inspired by how you are able to teach us a language that is complicated and confusing, without ever giving up on us. We wish each and every one of you only the best in health, and that you will never give up on anything the same way you have taught us to never give up on English. We hope to see all of you soon!!',
+    '',
+    'p.s. we are truly sorry if you find any grammar mistakes, if you do, we would be more than grateful if you tell us where we went wrong. xP',
+]

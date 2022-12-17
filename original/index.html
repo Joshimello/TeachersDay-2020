@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Teacher's Day</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<style>
+@import "https://fonts.googleapis.com/css?family=Ubuntu:300, 400, 500, 700";
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: yay;
+  src: url(yay.ttf);
+}
+
+.svg-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: sans-serif, "Microsoft YaHei";
+}
+
+svg path {
+  transition: .1s;
+}
+svg:hover path {
+  d: path("M 800 300 Q 400 250 0 300 L 0 0 L 800 0 L 800 300 Z");
+}
+
+body {
+  color: #333;
+  position: relative;
+  background: #f7e2de;
+  overflow: hidden;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+header {
+  color: #fff;
+  padding-top: 10vw;
+  padding-bottom: 25vw;
+  text-align: center;
+  font-size: 4vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-family: yay;
+}
+
+footer {
+  background: #f79b7b;
+  padding: 5vh 0;
+  text-align: center;
+  position: relative;
+}
+
+.nav {
+  background: #f7e2de;
+  height: 50vw;
+  text-align: center;
+}
+
+.button1 {
+  position: absolute;
+  display: block;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  border: 5px solid #417656;
+  margin-top: 12vw;
+  left: 7vw;
+  transition: 0.3s;
+  color: #fff;
+  font-size: 4vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #417656;
+}
+
+.button1:hover {
+  border-radius: 10%;
+  transform: scale(1.2)
+}
+
+.button2 {
+  position: absolute;
+  display: block;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  border: 5px solid #BC3838;
+  margin-top: 12vw;
+  right: 7vw;
+  transition: 0.3s;
+  color: #fff;
+  font-size: 3vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #BC3838;
+}
+
+.button2:hover {
+  border-radius: 10%;
+  transform: scale(1.2)
+}
+
+.button3 {
+  position: absolute;
+  display: block;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  border: 5px solid #7E2546;
+  margin-top: 12vw;
+  right: 31vw;
+  transition: 0.3s;
+  color: #fff;
+  font-size: 4vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #7E2546;
+}
+
+.button3:hover {
+  border-radius: 10%;
+  transform: scale(1.2)
+}
+
+.button4 {
+  position: absolute;
+  display: block;
+  height: 15vw;
+  width: 15vw;
+  border-radius: 50%;
+  border: 5px solid #08485E;
+  margin-top: 12vw;
+  left: 31vw;
+  transition: 0.3s;
+  color: #fff;
+  font-size: 4vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #08485E;
+}
+
+button {
+  font-family: yay;
+  outline:none
+}
+
+.button4:hover {
+  border-radius: 10%;
+  transform: scale(1.2)
+}
+
+.fa-chevron-circle-up { 
+  position: absolute;
+  opacity:50%; 
+  font-size: 4vw;
+  margin-top: 40vw;
+  right: 49.5vw;
+  transition: 0.1s;
+}
+
+.fa-chevron-circle-up:hover { 
+  opacity:100%; 
+  cursor: pointer;
+}
+
+.fa-chevron-circle-down {
+  margin-top: 5vw;
+  opacity: 50%;
+  transition: 0.1s;
+  z-index: 99;
+}
+
+.fa-chevron-circle-down:hover { 
+  opacity:100%; 
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10vw; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #888;
+  width: 40vw;
+  height: 19vw;
+  font-size: 1.5vw;
+  border-radius: 10px;
+}
+
+span {
+  color: #aaaaaa;
+  float: right;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+span:hover,
+span:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-178885323-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-178885323-1');
+</script>
+</head>
+<body translate="no">
+<body onresize="resize()">
+
+<div class="svg-container">
+<svg viewbox="0 0 800 400" class="svg">
+<path id="curve" fill="#f79b7b" d="M 800 300 Q 400 350 0 300 L 0 0 L 800 0 L 800 300 Z">
+</path>
+</svg>
+</div>
+
+<canvas id="canvas"></canvas>
+
+<header id="header">
+  <h1 style="font-family: yay;font-size: 10vw">祝老師們教師節快樂</h1>
+  <h3><i>HAPPY TEACHER'S DAY</i></h3>
+  <i class="fas fa-chevron-circle-down" onclick="gottonav()"></i>
+</header>
+
+<div class="nav" id="navigation">
+  <button class="button1" href="#" id="myBtnprim">班級<br>導師</button>
+  <button class="button2" href="#" id="myBtneng">English<br>Teachers</button>
+  <button class="button3" href="#" id="myBtnall">全體<br>老師</button>
+  <button class="button4" href="#" id="myBtnteach">各班<br>老師</button>
+  <i class="fas fa-chevron-circle-up" onclick="gottotop()"></i>
+</div>
+
+<div id="myModalprim" class="modal">
+  <div class="modal-content">
+    <span class="closeprim">&times;</span>
+    <iframe src="homeroomupload.php" frameBorder="0" style="height: 100%; width: 100%"></iframe>
+  </div>
+</div>
+
+<div id="myModaleng" class="modal">
+  <div class="modal-content">
+    <span class="closeeng">&times;</span>
+    <iframe src="englishupload.php" frameBorder="0" style="height: 100%; width: 100%"></iframe>
+  </div>
+</div>
+
+<div id="myModalall" class="modal">
+  <div class="modal-content">
+    <span class="closeall">&times;</span>
+    <iframe src="allteacherupload.php" frameBorder="0" style="height: 100%; width: 100%"></iframe>
+  </div>
+</div>
+
+<div id="myModalteach" class="modal">
+  <div class="modal-content">
+    <span class="closeteach">&times;</span>
+    <iframe src="teacherupload.php" frameBorder="0" style="height: 100%; width: 100%"></iframe>
+  </div>
+</div>
+</body>
+<script id="rendered-js">
+(function () {
+  // Variables
+  var $curve = document.getElementById("curve");
+  var last_known_scroll_position = 0;
+  var defaultCurveValue = 350;
+  var curveRate = 3;
+  var ticking = false;
+  var curveValue;
+
+  // Handle the functionality
+  function scrollEvent(scrollPos) {
+    if (scrollPos >= 0 && scrollPos < defaultCurveValue) {
+      curveValue = defaultCurveValue - parseFloat(scrollPos / curveRate);
+      $curve.setAttribute(
+      "d",
+      "M 800 300 Q 400 " + curveValue + " 0 300 L 0 0 L 800 0 L 800 300 Z");
+
+    }
+  }
+
+  // Scroll Listener
+  // https://developer.mozilla.org/en-US/docs/Web/Events/scroll
+  window.addEventListener("scroll", function (e) {
+    last_known_scroll_position = window.scrollY;
+
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        scrollEvent(last_known_scroll_position);
+        ticking = false;
+      });
+    }
+
+    ticking = true;
+  });
+})();
+//# sourceURL=pen.js
+
+  function gottonav() {
+    window.location.href = "#navigation";
+  }
+
+  function gottotop() {
+    window.location.href = "#header";
+  }
+
+  function resize() {
+    location.reload();
+  }
+
+var modalprim = document.getElementById("myModalprim");
+var modalall = document.getElementById("myModalall");
+var modaleng = document.getElementById("myModaleng");
+var modalteach = document.getElementById("myModalteach");
+
+var btnprim = document.getElementById("myBtnprim");
+var btnall = document.getElementById("myBtnall");
+var btneng = document.getElementById("myBtneng");
+var btnteach = document.getElementById("myBtnteach");
+
+var closeprim = document.getElementsByClassName("closeprim")[0];
+var closeall = document.getElementsByClassName("closeall")[0];
+var closeeng = document.getElementsByClassName("closeeng")[0];
+var closeteach = document.getElementsByClassName("closeteach")[0];
+
+btnprim.onclick = function() {
+  modalprim.style.display = "block";
+}
+
+btnall.onclick = function() {
+  modalall.style.display = "block";
+}
+
+btneng.onclick = function() {
+  modaleng.style.display = "block";
+}
+
+btnteach.onclick = function() {
+  modalteach.style.display = "block";
+}
+
+closeprim.onclick = function() {
+  modalprim.style.display = "none";
+}
+
+closeall.onclick = function() {
+  modalall.style.display = "none";
+}
+
+closeeng.onclick = function() {
+  modaleng.style.display = "none";
+}
+
+closeteach.onclick = function() {
+  modalteach.style.display = "none";
+}
+
+
+var submitteach = document.getElementById("confbuttonteach");
+var submiteng = document.getElementById("confbuttoneng");
+var submitall = document.getElementById("confbuttonall");
+var submitprim = document.getElementById("confbuttonprim");
+var skipteach = document.getElementById("skipbuttonteach");
+var skipeng = document.getElementById("skipbuttoneng");
+var skipall = document.getElementById("skipbuttonall");
+var skipprim = document.getElementById("skipbuttonprim");
+
+
+const canvasEl = document.querySelector('#canvas');
+
+const w = canvasEl.width = window.innerWidth;
+const h = canvasEl.height = window.innerHeight * 2;
+
+function loop() {
+  requestAnimationFrame(loop);
+  ctx.clearRect(0,0,w,h);
+  
+  confs.forEach((conf) => {
+    conf.update();
+    conf.draw();
+  })
+}
+
+function Confetti () {
+  //construct confetti
+  const colours = ['#fde132', '#009bde', '#ff6b00'];
+  
+  this.x = Math.round(Math.random() * w);
+  this.y = Math.round(Math.random() * h)-(h/2);
+  this.rotation = Math.random()*360;
+
+  const size = Math.random()*(w/60);
+  this.size = size < 15 ? 15 : size;
+
+  this.color = colours[Math.floor(colours.length * Math.random())];
+
+  this.speed = this.size/7;
+  
+  this.opacity = Math.random();
+
+  this.shiftDirection = Math.random() > 0.5 ? 1 : -1;
+}
+
+Confetti.prototype.update = function() {
+  this.y += this.speed;
+  
+  if (this.y <= h) {
+    this.x += this.shiftDirection/3;
+    this.rotation += this.shiftDirection*this.speed/100;
+  }
+
+  if (this.y > h) this.border();
+};
+
+Confetti.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.size, this.rotation, this.rotation+(Math.PI/2));
+  ctx.lineTo(this.x, this.y);
+  ctx.closePath();
+  ctx.globalAlpha = this.opacity;
+  ctx.fillStyle = this.color;
+  ctx.fill();
+};
+
+const ctx = canvasEl.getContext('2d');
+const confNum = Math.floor(w / 4);
+const confs = new Array(confNum).fill().map(_ => new Confetti());
+
+loop();
+  </script>
+}
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Teacher's Day</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+<style>
+@import "https://fonts.googleapis.com/css?family=Ubuntu:300, 400, 500, 700";
+*, *:after, *:before {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: yay;
+  src: url(yay.ttf);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: #333;
+  position: relative;
+  background: #417656;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+header {
+  color: #fff;
+  padding-bottom: 1vw;
+  text-align: center;
+  font-size: 4vw;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  letter-spacing: 0.5em;
+}
+
+footer {
+  background: #346146;
+  padding: 5vh 0;
+  text-align: center;
+  position: relative;
+  color: white;
+  font-size: 1.5vw;
+}
+
+.fa-chevron-circle-up { 
+  position: absolute;
+  opacity:50%; 
+  font-size: 4vw;
+  margin-top: 40vw;
+  right: 49.5vw;
+}
+
+.fa-chevron-circle-down {
+  margin-top: 5vw;
+  opacity: 50%;
+}
+
+.fa-arrow-circle-left {
+  margin: 1vw;
+  opacity: 50%;
+  transition: 0.1s;
+  font-size: 3vw;
+  color:#fff;
+}
+
+.fa-arrow-circle-left:hover { 
+  opacity:100%; 
+  cursor: pointer;
+}
+
+.wordscontainer {
+  padding-left: 12vw;
+  padding-right: 12vw;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.wordsstart {
+  font-size: 1.7em;
+  color:#fff;
+  letter-spacing: 0.19em;
+}
+
+.words {
+  font-size: 1.7em;
+  color:#fff;
+}
+
+.wordssmall {
+  font-size: 1.2em;
+  color:#fff;
+}
+
+main {
+  height: 100vh;
+}
+
+.grid-container {
+  display: grid;
+  grid-column-gap: 3%;
+  grid-row-gap: 10%;
+  grid-template-columns: auto auto auto auto auto auto;
+  padding: 5%;
+}
+
+.grid-item {
+  font-family: yay;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 10%;
+  transition: 0.2s;
+  outline:none
+}
+
+.grid-item:link, .grid-item:active, .grid-item:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.grid-item:hover {
+  background-color: #92e0b1;
+  border-radius: 20%;
+}
+
+</style>
+<script>
+  window.console = window.console || function(t) {};
+</script>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+</head>
+<body translate="no">
+<body onresize="resize()">
+
+<i class="fas fa-arrow-circle-left" onclick="back()"></i>
+<header id="header">
+  <h1 style="font-family: yay;font-size: 12vw;color: #fff">班級導師</h1>
+</header>
+
+<main id="main">
+  <div class="grid-container">
+  <a href="homeroom/p1.html" class="grid-item">小一</a>
+  <a href="homeroom/p2.html" class="grid-item">小二</a>
+  <a href="homeroom/p3.html" class="grid-item">小三</a>
+  <a href="homeroom/p4.html" class="grid-item">小四</a>
+  <a href="homeroom/p5.html" class="grid-item">小五</a>
+  <a href="homeroom/p6.html" class="grid-item">小六</a>
+  <a href="homeroom/j1.html" class="grid-item">國一</a>
+  <a href="homeroom/j2.html" class="grid-item">國二</a>
+  <a href="homeroom/j3.html" class="grid-item">國三</a>
+  <a href="homeroom/s1.html" class="grid-item">高一</a>
+  <a href="homeroom/s2.html" class="grid-item">高二</a>
+  <a href="homeroom/s3.html" class="grid-item">高三</a>
+  </div>
+</main>
+
+<footer>
+    規劃人以及網站設計: 黃謙愛｜國高中部負責人: 陳可若｜小學部負責人: 池宥樑｜網站建立: 連正文<br>
+    心靈支援: 鄭佳濰，陳儒纓｜小學部協助: 許婉葳老師｜英文謝師文章: 黃謙愛｜中文謝師文章: 陳儒纓<br>
+    配合: 全校｜默默的支持: 高二班<br>
+</footer>
+
+</body>
+<script id="rendered-js">
+function back() {
+  window.location.href = "/teachersday";
+}
+</script>
+</body>
+</html>
